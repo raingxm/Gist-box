@@ -1,0 +1,12 @@
+h1 {
+	text-align: center;
+}
+
+#app button {
+	margin: 10px 0;
+}
+
+.gist-box {
+	width: 50%;
+	margin: 0 auto;
+}
