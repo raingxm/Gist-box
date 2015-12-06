@@ -1,7 +1,24 @@
 var GistBox = React.createClass({
+	getInitialState: function() {
+		return {
+			gists: [
+				{username: 'raingxm', url: 'https://gist.github.com/raingxm/f9b0aaf9c1868d09b42d'}
+			]
+		};
+	},
+
+	addNewGist: function(gist) {
+		return <Gist username={gist.username} url={gist.url} />;
+	},
+	
+
 	render: function() {
 		return (
-			<h1>Hello world</h1>
+			<div className='gist-box'>
+				<h1>Gist Box</h1>
+				<GistAddForm />
+				{ this.state.gists.map(gist => this.addNewGist(gist)) }
+			</div>
 		);
 	}
 });
