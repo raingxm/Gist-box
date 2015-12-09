@@ -7,17 +7,16 @@ var GistBox = React.createClass({
 		};
 	},
 
-	addNewGist: function(gist) {
+	newGist: function(gist) {
 		return <Gist username={gist.username} url={gist.url} />;
 	},
-	
 
 	render: function() {
 		return (
 			<div className='gist-box'>
 				<h1>Gist Box</h1>
 				<GistAddForm />
-				{ this.state.gists.map(gist => this.addNewGist(gist)) }
+				{ this.state.gists.map(this.newGist) }
 			</div>
 		);
 	}
